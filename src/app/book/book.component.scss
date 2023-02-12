@@ -1,0 +1,35 @@
+.book-item {
+  list-style: none;
+  text-overflow: ellipsis;
+  & .img-box{
+    height: 373px;
+     transition: all 0.5s ease;
+  &:hover{
+    transform: scale(1.03);
+  }
+    & img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  & .content-box {
+     display: flex;
+      flex-direction: column;
+      word-wrap: break-word;
+      height: 150px;
+      justify-content: space-between;
+      flex-grow: 1;
+      & p, h3 {
+        margin: 0;
+      }
+      & h3 {
+        margin-top: 20px;
+      }
+      & .button{
+        padding: 10px 20px;
+      }
+
+    }
+  }

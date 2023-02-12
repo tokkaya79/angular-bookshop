@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  padding: 0 40px;
+  gap: 30px;
+}
+.book {
+  width: 225px;
+  height: 522px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  border: 1px solid #a6a3a3;
+  box-shadow: 0 0 17px #6b6a6a;
+  padding: 10px;
+
+}

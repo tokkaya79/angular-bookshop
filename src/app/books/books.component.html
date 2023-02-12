@@ -1,0 +1,17 @@
+<button [disabled]="isDisabled" (click)="handleBtn()">
+  Disabled the books
+</button>
+<button (click)="toggleBooks()">
+  <ng-container *ngIf="!isShowing">Show books</ng-container>
+  <ng-container *ngIf="isShowing">Hide books</ng-container>
+</button>
+<input type="text" (input)="handleInput($event)" />
+<input type="text" [(ngModel)]="searchName" />
+<p style="margin: 30px; border-bottom: solid 1px gray; line-height: 1.5">
+  {{ searchName }}
+</p>
+  <ul class="wrapper" *ngIf="isShowing">
+    <ng-container *ngFor="let book of books; let i = index">
+      <app-book [book]="book" class="book"></app-book>
+    </ng-container>
+  </ul>
