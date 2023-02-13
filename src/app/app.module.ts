@@ -3,12 +3,13 @@ import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppComponent } from "src/app/app.component";
-import { BooksComponent } from 'src/app/books/books.component';
-import { BookComponent } from './book/book.component';
+import { BooksModule } from "src/app/books/books.module";
+import { AppRoutingModule } from "src/app/app-routing.module";
+import { CartComponent } from 'src/app/cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, BooksComponent, BookComponent],
-  imports: [BrowserModule, FormsModule],
+  declarations: [AppComponent, CartComponent],
+  imports: [BrowserModule, FormsModule, BooksModule, AppRoutingModule],
   bootstrap: [AppComponent]
 })
 
