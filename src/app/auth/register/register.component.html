@@ -1,5 +1,5 @@
 <div class="container flex h-screen justify-center">
-  <form class="border m-auto p-4 w-1/3">
+  <form (ngSubmit)="submit()" #myForm="ngForm" class="border m-auto p-4 w-1/3">
     <h2 class="text-center font-bold text-lg">Register</h2>
     <div class="my-5">
       <label for="email">Email</label>
@@ -10,7 +10,15 @@
         placeholder="Email"
         [(ngModel)]="form.email"
         name="email"
+        #email="ngModel"
+        required
       />
+    </div>
+    <div
+      *ngIf="email.invalid && (email.dirty || email.touched)"
+      class="p-2 bg-red-200 text-red-500 rounded"
+    >
+      Email filed must be valid
     </div>
     <div class="my-5">
       <label for="password">Password</label>
@@ -19,23 +27,43 @@
         id="password"
         class="p-2 rounded w-full border outline-none"
         placeholder="Password"
-         [(ngModel)]="form.password"
+        [(ngModel)]="form.password"
         name="password"
+        #password="ngModel"
+        required
       />
+    </div>
+    <div
+      *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="p-2 bg-red-200 text-red-500 rounded"
+    >
+      Password filed must be valid
     </div>
     <div class="my-5">
       <label for="password">Confirm Password</label>
       <input
         type="password"
-        id="password"
+        id="confirnPpassword"
         class="p-2 rounded w-full border outline-none"
         placeholder="Confirm Password"
-         [(ngModel)]="form.confirnPassword"
+        [(ngModel)]="form.confirnPassword"
         name="confirnPassword"
+        #confirnPassword="ngModel"
+        required
       />
+    </div>
+    <div
+      *ngIf="
+        confirnPassword.invalid &&
+        (confirnPassword.dirty || confirnPassword.touched)
+      "
+      class="p-2 bg-red-200 text-red-500 rounded mb-5"
+    >
+      Confirn Password filed must be valid
     </div>
     <div>
       <input
+        [disabled]="myForm.form.invalid"
         type="submit"
         value="Register"
         class="p-2 rounded w-full bg-orange-500 text-white font-bold text-lg hover:bg-orange-400"

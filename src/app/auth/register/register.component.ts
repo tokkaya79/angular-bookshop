@@ -13,5 +13,9 @@ export class RegisterComponent {
       password: '',
       confirnPassword: ''
   }
+  submit() {
+    console.log(this.form);
+
+  }
 
 }
