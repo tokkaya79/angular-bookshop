@@ -4,20 +4,19 @@ import { LoginForm } from 'src/app/types/login.interface';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
+  form: LoginForm = {
+    email: '',
+    password: '',
+  };
 
- form: LoginForm = {
-  email: '',
-  password: ''
- }
+  constructor() {}
 
- constructor() {}
+  ngOnInit(): void {}
 
- ngOnInit(): void {}
-
- submit(){
-  console.log(this.form)
- }
+  submit() {
+    console.log(this.form);
+  }
 }
