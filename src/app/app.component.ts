@@ -1,4 +1,7 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { initializeApp } from "firebase/app";
+
+import { firebaseConfig } from "src/app/firebase.config";
 
 
 @Component({
@@ -8,4 +11,9 @@ import { Component } from "@angular/core";
 })
 
 
-export class AppComponent {}
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    initializeApp(firebaseConfig)
+
+  }
+}
