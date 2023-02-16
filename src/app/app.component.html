@@ -9,12 +9,17 @@
         <li class="ml-4">
           <a routerLink="/cart">Cart</a>
         </li>
-        <li class="ml-4">
-          <a routerLink="/login">Login</a>
-        </li>
-        <li class="ml-4">
-          <a routerLink="/register">Register</a>
-        </li>
+        <ng-container *ngIf="!isAuthenticated()">
+          <li class="ml-4">
+            <a routerLink="/login">Login</a>
+          </li>
+          <li class="ml-4">
+            <a routerLink="/register">Register</a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="isAuthenticated()">
+          <button class="ml-4">Logout</button>
+        </ng-container>
       </ul>
     </div>
   </div>

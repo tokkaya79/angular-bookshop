@@ -67,8 +67,8 @@
         type="submit"
         class="p-2 rounded w-full bg-orange-400 text-white font-bold cursor-pointer hover:bg-orange-300"
       >
-        <ng-container *ngIf="isLoading">Loading...</ng-container>
-        <ng-container *ngIf="!isLoading">Login</ng-container>
+        <ng-container *ngIf="isLoading()">Loading...</ng-container>
+        <ng-container *ngIf="!isLoading()">Login</ng-container>
       </button>
     </div>
   </form>

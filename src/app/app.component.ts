@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { initializeApp } from "firebase/app";
 
 import { firebaseConfig } from "src/app/firebase.config";
+import { AuthService } from "./auth/auth.service";
 
 
 @Component({
@@ -12,8 +13,11 @@ import { firebaseConfig } from "src/app/firebase.config";
 
 
 export class AppComponent implements OnInit {
+  constructor(private authService: AuthService){}
   ngOnInit(): void {
     initializeApp(firebaseConfig)
-
+  }
+  isAuthenticated(){
+    return this.authService.isAuthenticated
   }
 }

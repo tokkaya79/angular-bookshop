@@ -29,8 +29,8 @@
         type="submit"
         class="p-2 rounded w-full bg-red-400 text-white font-bold cursor-pointer hover:bg-red-300"
       >
-        <ng-container *ngIf="isLoading">Loading...</ng-container>
-        <ng-container *ngIf="!isLoading">Login</ng-container>
+        <ng-container *ngIf="isLoading()">Loading...</ng-container>
+        <ng-container *ngIf="!isLoading()">Login</ng-container>
       </button>
     </div>
   </form>
