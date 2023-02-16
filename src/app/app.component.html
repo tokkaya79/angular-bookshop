@@ -1,11 +1,13 @@
 <nav class="p-4 bg-gray-500">
-  <div class="container flex justify-between mx-auto my-0 text-2xl text-white font-bold">
+  <div
+    class="container flex justify-between mx-auto my-0 text-2xl text-white font-bold"
+  >
     <h1><a routerLink="/">EB EnglishBooks</a></h1>
     <div class="menu">
       <ul class="flex text-xl">
         <li>
           <a routerLink="/">Books</a>
-          </li>
+        </li>
         <li class="ml-4">
           <a routerLink="/cart">Cart</a>
         </li>
@@ -18,7 +20,7 @@
           </li>
         </ng-container>
         <ng-container *ngIf="isAuthenticated()">
-          <button class="ml-4">Logout</button>
+          <button (click)="logout()" class="ml-4">Logout</button>
         </ng-container>
       </ul>
     </div>
