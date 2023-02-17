@@ -1,5 +1,18 @@
-<h1>Your cart</h1>
-<div *ngIf="getCart().length > 0">
-  <div *ngFor="let book of getCart()">{{book.name}}</div>
+<div class="container">
+  <h1>Your cart</h1>
+  <div *ngIf="getCart().length > 0">
+    <div *ngFor="let book of getCart()">
+      <li class="book-item">
+        <div class="img-box">
+          <img class="img" [src]="book.img" [alt]="book.name" />
+        </div>
+        <div class="content-box">
+          <h3>{{ book.name | titlecase }}</h3>
+          <p>{{ book.author | titlecase }}</p>
+          <p>{{ book.price | currency : "EUR" }}</p>
+        </div>
+      </li>
+    </div>
+  </div>
+  <div *ngIf="getCart().length === 0">No books in your csrt</div>
 </div>
-<div *ngIf="getCart().length === 0">No books in your csrt</div>

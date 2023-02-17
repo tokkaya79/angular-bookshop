@@ -1,13 +1,18 @@
 <li class="book-item">
   <div class="img-box">
-
-  <img class="img" [src]="book.img" [alt]="book.name" />
+    <img class="img" [src]="book.img" [alt]="book.name" />
   </div>
   <div class="content-box">
     <h3>{{ book.name | titlecase }}</h3>
     <p>{{ book.author | titlecase }}</p>
-    <p>{{ book.price | currency : "EUR" }}</p>
-    <button *ngIf="!isInCart" class="button" (click)="addToCart()">Add to cart</button>
-    <button *ngIf="isInCart" class="button" (click)="removeFromCart()">Remove from cart</button>
+    <div>
+      <p class="price">{{ book.price | currency : "EUR" }}</p>
+      <button *ngIf="!isInCart" class="button" (click)="addToCart()">
+        Add to cart
+      </button>
+      <button *ngIf="isInCart" class="button" (click)="removeFromCart()">
+        Remove from cart
+      </button>
+    </div>
   </div>
 </li>
