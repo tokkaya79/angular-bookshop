@@ -5,11 +5,13 @@ import { BooksComponent } from "src/app/books/books.component";
 import { CartComponent } from "src/app/cart/cart.component";
 import { LoginComponent } from "src/app/auth/login/login.component";
 import { RegisterComponent } from "src/app/auth/register/register.component";
-import { AuthGuard } from "src/app/auth/auth.guard";
+// import { AuthGuard } from "src/app/auth/auth.guard";
 
 const routes: Routes = [
   {path:'', component: BooksComponent},
-  {path:'cart', component: CartComponent, canActivate: [AuthGuard]},
+  //если хотим откріть корзину когда юзер зарегестрирован
+  // {path:'cart', component: CartComponent, canActivate: [AuthGuard]},
+  {path:'cart', component: CartComponent},
   {path:'login', component: LoginComponent},
   {path:'register', component: RegisterComponent},
 ]
